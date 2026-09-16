@@ -1,0 +1,343 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="第 1 页" id="0cfacokQcHxYo6-dhKck">
+    <mxGraphModel dx="1244" dy="543" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1900" pageHeight="1350" math="0" shadow="0" adaptiveColors="auto">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontSize=20;whiteSpace=wrap;" value="&lt;b&gt;风控系统 · 业务领域与调用关系&lt;/b&gt;&lt;br&gt;15 个表内项目｜实线：RPC/HTTP 调用；虚线：MQ 事件流｜灰色节点：表外依赖" vertex="1">
+          <mxGeometry height="60" width="1680" x="40" as="geometry" />
+        </mxCell>
+        <mxCell id="domain0" parent="1" style="swimlane;horizontal=0;startSize=110;fillColor=#dae8fc;strokeColor=#b3b3b3;html=1;fontSize=15;pointerEvents=0;collapsible=0;" value="风险处置" vertex="1">
+          <mxGeometry height="150" width="1260" x="40" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="cmspunish-thrift-service" parent="domain0" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;spacing=4;fillColor=#ffffff;strokeColor=#6c8ebf;" value="cmspunish-thrift-service&lt;br&gt;&lt;b&gt;处罚执行与撤回&lt;/b&gt;" vertex="1">
+          <mxGeometry height="60" width="140" x="120" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="punish-rs-service" parent="domain0" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;spacing=4;fillColor=#ffffff;strokeColor=#6c8ebf;" value="punish-rs-service&lt;br&gt;&lt;b&gt;出租车行为分与禁听&lt;/b&gt;" vertex="1">
+          <mxGeometry height="60" width="140" x="480" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="domain1" parent="1" style="swimlane;horizontal=0;startSize=110;fillColor=#ffe6cc;strokeColor=#b3b3b3;html=1;fontSize=15;pointerEvents=0;collapsible=0;" value="准入状态" vertex="1">
+          <mxGeometry height="150" width="1260" x="40" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="userpermission-thrift-service" parent="domain1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;spacing=4;fillColor=#ffffff;strokeColor=#6c8ebf;" value="userpermission-thrift-&lt;br&gt;service&lt;br&gt;&lt;b&gt;用户业务封禁&lt;/b&gt;" vertex="1">
+          <mxGeometry height="60" width="140" x="480" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="blackinfo-thrift-service" parent="domain1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;spacing=4;fillColor=#ffffff;strokeColor=#6c8ebf;" value="blackinfo-thrift-service&lt;br&gt;&lt;b&gt;名单与高危管理&lt;/b&gt;" vertex="1">
+          <mxGeometry height="60" width="140" x="840" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="domain2" parent="1" style="swimlane;horizontal=0;startSize=110;fillColor=#e1d5e7;strokeColor=#b3b3b3;html=1;fontSize=15;pointerEvents=0;collapsible=0;" value="身份与风险核验" vertex="1">
+          <mxGeometry height="150" width="1260" x="40" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="shumei-thrift-service" parent="domain2" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;spacing=4;fillColor=#ffffff;strokeColor=#6c8ebf;" value="shumei-thrift-service&lt;br&gt;&lt;b&gt;设备账号内容风控&lt;/b&gt;" vertex="1">
+          <mxGeometry height="60" width="140" x="840" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="recognition-thrift-service" parent="domain2" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;spacing=4;fillColor=#ffffff;strokeColor=#6c8ebf;" value="recognition-thrift-&lt;br&gt;service&lt;br&gt;&lt;b&gt;人脸状态与证照识别&lt;/b&gt;" vertex="1">
+          <mxGeometry height="60" width="140" x="480" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="recognition-rs-service" parent="domain2" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;spacing=4;fillColor=#ffffff;strokeColor=#6c8ebf;" value="recognition-rs-service&lt;br&gt;&lt;b&gt;人脸及证照 HTTP 入口&lt;/b&gt;" vertex="1">
+          <mxGeometry height="60" width="140" x="120" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="domain3" parent="1" style="swimlane;horizontal=0;startSize=110;fillColor=#fff2cc;strokeColor=#b3b3b3;html=1;fontSize=15;pointerEvents=0;collapsible=0;" value="订单风险" vertex="1">
+          <mxGeometry height="150" width="1260" x="40" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="carpool-risk-hook-service" parent="domain3" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;spacing=4;fillColor=#ffffff;strokeColor=#6c8ebf;" value="carpool-risk-hook-&lt;br&gt;service&lt;br&gt;&lt;b&gt;接单后复查风险&lt;/b&gt;" vertex="1">
+          <mxGeometry height="60" width="140" x="840" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="carpool-risk-rs-layer" parent="domain3" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;spacing=4;fillColor=#ffffff;strokeColor=#6c8ebf;" value="carpool-risk-rs-layer&lt;br&gt;&lt;b&gt;取消提示 HTTP 入口&lt;/b&gt;" vertex="1">
+          <mxGeometry height="60" width="140" x="120" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="carpool-risk-thrift-service" parent="domain3" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;spacing=4;fillColor=#ffffff;strokeColor=#6c8ebf;" value="carpool-risk-thrift-&lt;br&gt;service&lt;br&gt;&lt;b&gt;逃单与取消责任计算&lt;/b&gt;" vertex="1">
+          <mxGeometry height="60" width="140" x="480" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="domain4" parent="1" style="swimlane;horizontal=0;startSize=110;fillColor=#d5e8d4;strokeColor=#b3b3b3;html=1;fontSize=15;pointerEvents=0;collapsible=0;" value="订单执行" vertex="1">
+          <mxGeometry height="150" width="1260" x="40" y="700" as="geometry" />
+        </mxCell>
+        <mxCell id="bookride-hook-service" parent="domain4" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;spacing=4;fillColor=#ffffff;strokeColor=#6c8ebf;" value="bookride-hook-service&lt;br&gt;&lt;b&gt;订单事件与取消执行&lt;/b&gt;" vertex="1">
+          <mxGeometry height="60" width="140" x="840" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="carpool-fulfillment-server" parent="domain4" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;spacing=4;fillColor=#ffffff;strokeColor=#6c8ebf;" value="carpool-fulfillment-&lt;br&gt;server&lt;br&gt;&lt;b&gt;接单与履约状态流转&lt;/b&gt;" vertex="1">
+          <mxGeometry height="60" width="140" x="480" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="domain5" parent="1" style="swimlane;horizontal=0;startSize=110;fillColor=#d0cee2;strokeColor=#b3b3b3;html=1;fontSize=15;pointerEvents=0;collapsible=0;" value="行程安全" vertex="1">
+          <mxGeometry height="150" width="1260" x="40" y="850" as="geometry" />
+        </mxCell>
+        <mxCell id="carpool-carsafety-rs-service" parent="domain5" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;spacing=4;fillColor=#ffffff;strokeColor=#6c8ebf;" value="carpool-carsafety-rs-&lt;br&gt;service&lt;br&gt;&lt;b&gt;行程安全 HTTP 入口&lt;/b&gt;" vertex="1">
+          <mxGeometry height="60" width="140" x="120" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="carpool-safety-hook-service" parent="domain5" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;spacing=4;fillColor=#ffffff;strokeColor=#6c8ebf;" value="carpool-safety-hook-&lt;br&gt;service&lt;br&gt;&lt;b&gt;虚拟号与安全事件&lt;/b&gt;" vertex="1">
+          <mxGeometry height="60" width="140" x="840" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="domain6" parent="1" style="swimlane;horizontal=0;startSize=110;fillColor=#f8cecc;strokeColor=#b3b3b3;html=1;fontSize=15;pointerEvents=0;collapsible=0;" value="智能判责" vertex="1">
+          <mxGeometry height="150" width="1260" x="40" y="1000" as="geometry" />
+        </mxCell>
+        <mxCell id="ai-multi-passenger-blame-service" parent="domain6" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;spacing=4;fillColor=#ffffff;strokeColor=#6c8ebf;" value="ai-multi-passenger-&lt;br&gt;blame-service&lt;br&gt;&lt;b&gt;违规多拼取证判断&lt;/b&gt;" vertex="1">
+          <mxGeometry height="60" width="140" x="480" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="ext-punish" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;spacing=3;fillColor=#f5f5f5;strokeColor=#999999;" value="表外 · 顺风车处罚&lt;br&gt;CarpoolPunish" vertex="1">
+          <mxGeometry height="60" width="140" x="1480" y="145" as="geometry" />
+        </mxCell>
+        <mxCell id="ext-vendor" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;spacing=3;fillColor=#f5f5f5;strokeColor=#999999;" value="表外 · 第三方检测厂商&lt;br&gt;数美 / 天象" vertex="1">
+          <mxGeometry height="60" width="140" x="1480" y="295" as="geometry" />
+        </mxCell>
+        <mxCell id="ext-face" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;spacing=3;fillColor=#f5f5f5;strokeColor=#999999;" value="表外 · 第三方人脸厂商&lt;br&gt;腾讯 / 百度 / 阿里等" vertex="1">
+          <mxGeometry height="60" width="140" x="1480" y="445" as="geometry" />
+        </mxCell>
+        <mxCell id="ext-identity" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;spacing=3;fillColor=#f5f5f5;strokeColor=#999999;" value="表外 · 实名身份资料&lt;br&gt;usersafety-business-thrift" vertex="1">
+          <mxGeometry height="60" width="140" x="1480" y="595" as="geometry" />
+        </mxCell>
+        <mxCell id="ext-order" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;spacing=3;fillColor=#f5f5f5;strokeColor=#999999;" value="表外 · 订单读写服务&lt;br&gt;Carpoolread / Carpoolwrite" vertex="1">
+          <mxGeometry height="60" width="140" x="1480" y="745" as="geometry" />
+        </mxCell>
+        <mxCell id="ext-safety" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;spacing=3;fillColor=#f5f5f5;strokeColor=#999999;" value="表外 · 行程安全核心&lt;br&gt;carsafety-thrift-service" vertex="1">
+          <mxGeometry height="60" width="140" x="1480" y="895" as="geometry" />
+        </mxCell>
+        <mxCell id="ext-evidence" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;spacing=3;fillColor=#f5f5f5;strokeColor=#999999;" value="表外 · 聊天、轨迹等证据&lt;br&gt;BcaDataQuery / RouteEngines" vertex="1">
+          <mxGeometry height="60" width="140" x="1480" y="1045" as="geometry" />
+        </mxCell>
+        <mxCell id="main-edge0" edge="1" parent="1" source="cmspunish-thrift-service" style="endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#ffffff;strokeWidth=1.5;strokeColor=#35649a;edgeStyle=orthogonalEdgeStyle;rounded=0;libavoidRouting=1;orthogonalLoop=1;jettySize=auto;html=1;" target="punish-rs-service" value="RPC">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="main-edge1" edge="1" parent="1" source="cmspunish-thrift-service" style="endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#ffffff;strokeWidth=1.5;strokeColor=#35649a;edgeStyle=orthogonalEdgeStyle;rounded=0;libavoidRouting=1;orthogonalLoop=1;jettySize=auto;html=1;" target="userpermission-thrift-service" value="RPC">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="230" y="325" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="main-edge2" edge="1" parent="1" source="cmspunish-thrift-service" style="endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#ffffff;strokeWidth=1.5;strokeColor=#35649a;edgeStyle=orthogonalEdgeStyle;rounded=0;libavoidRouting=1;orthogonalLoop=1;jettySize=auto;html=1;" target="blackinfo-thrift-service" value="RPC">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="230" y="250" />
+              <mxPoint x="950" y="250" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="main-edge3" edge="1" parent="1" source="punish-rs-service" style="endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#ffffff;strokeWidth=1.5;strokeColor=#35649a;edgeStyle=orthogonalEdgeStyle;rounded=0;libavoidRouting=1;orthogonalLoop=1;jettySize=auto;html=1;" target="userpermission-thrift-service" value="RPC">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="main-edge4" edge="1" parent="1" source="shumei-thrift-service" style="endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#ffffff;strokeWidth=1.5;strokeColor=#35649a;edgeStyle=orthogonalEdgeStyle;rounded=0;libavoidRouting=1;orthogonalLoop=1;jettySize=auto;html=1;" target="blackinfo-thrift-service" value="RPC">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="main-edge5" edge="1" parent="1" source="recognition-rs-service" style="endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#ffffff;strokeWidth=1.5;strokeColor=#35649a;edgeStyle=orthogonalEdgeStyle;rounded=0;libavoidRouting=1;orthogonalLoop=1;jettySize=auto;html=1;" target="recognition-thrift-service" value="RPC">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="main-edge6" edge="1" parent="1" source="recognition-rs-service" style="endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#ffffff;strokeWidth=1.5;strokeColor=#35649a;edgeStyle=orthogonalEdgeStyle;rounded=0;libavoidRouting=1;orthogonalLoop=1;jettySize=auto;html=1;" target="userpermission-thrift-service" value="RPC">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="230" y="325" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="main-edge7" edge="1" parent="1" source="carpool-risk-hook-service" style="endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#ffffff;strokeWidth=1.5;strokeColor=#35649a;edgeStyle=orthogonalEdgeStyle;rounded=0;libavoidRouting=1;orthogonalLoop=1;jettySize=auto;html=1;" target="blackinfo-thrift-service" value="RPC">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1036" y="625" />
+              <mxPoint x="1036" y="325" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="main-edge8" edge="1" parent="1" source="carpool-risk-hook-service" style="endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#ffffff;strokeWidth=1.5;strokeColor=#35649a;edgeStyle=orthogonalEdgeStyle;rounded=0;libavoidRouting=1;orthogonalLoop=1;jettySize=auto;html=1;" target="recognition-thrift-service" value="RPC">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="756" y="625" />
+              <mxPoint x="756" y="475" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="main-edge9" edge="1" parent="1" source="carpool-risk-rs-layer" style="endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#ffffff;strokeWidth=1.5;strokeColor=#35649a;edgeStyle=orthogonalEdgeStyle;rounded=0;libavoidRouting=1;orthogonalLoop=1;jettySize=auto;html=1;" target="carpool-risk-thrift-service" value="RPC">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="main-edge10" edge="1" parent="1" source="carpool-fulfillment-server" style="endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#ffffff;strokeWidth=1.5;strokeColor=#35649a;edgeStyle=orthogonalEdgeStyle;rounded=0;libavoidRouting=1;orthogonalLoop=1;jettySize=auto;html=1;" target="userpermission-thrift-service" value="RPC">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="690" y="775" />
+              <mxPoint x="690" y="325" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="main-edge11" edge="1" parent="1" source="carpool-fulfillment-server" style="endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#ffffff;strokeWidth=1.5;strokeColor=#35649a;edgeStyle=orthogonalEdgeStyle;rounded=0;libavoidRouting=1;orthogonalLoop=1;jettySize=auto;html=1;" target="blackinfo-thrift-service" value="RPC">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="784" y="775" />
+              <mxPoint x="784" y="325" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="main-edge12" edge="1" parent="1" source="carpool-fulfillment-server" style="endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#ffffff;strokeWidth=1.5;strokeColor=#35649a;edgeStyle=orthogonalEdgeStyle;rounded=0;libavoidRouting=1;orthogonalLoop=1;jettySize=auto;html=1;" target="recognition-thrift-service" value="RPC">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="676" y="775" />
+              <mxPoint x="676" y="475" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="main-edge13" edge="1" parent="1" source="blackinfo-thrift-service" style="endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#ffffff;strokeWidth=1.5;dashed=1;dashPattern=6 4;strokeColor=#b07800;edgeStyle=orthogonalEdgeStyle;rounded=0;libavoidRouting=1;orthogonalLoop=1;jettySize=auto;html=1;" target="bookride-hook-service" value="MQ · 高危取消">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1050" y="325" />
+              <mxPoint x="1050" y="775" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="main-edge14" edge="1" parent="1" source="cmspunish-thrift-service" style="endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#ffffff;strokeWidth=1.5;dashed=1;dashPattern=6 4;strokeColor=#b07800;edgeStyle=orthogonalEdgeStyle;rounded=0;libavoidRouting=1;orthogonalLoop=1;jettySize=auto;html=1;" target="bookride-hook-service" value="MQ · 封禁取消">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="417" y="175" />
+              <mxPoint x="417" y="707" />
+              <mxPoint x="950" y="707" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="main-edge15" edge="1" parent="1" source="carpool-fulfillment-server" style="endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#ffffff;strokeWidth=1.5;dashed=1;dashPattern=6 4;strokeColor=#b07800;edgeStyle=orthogonalEdgeStyle;rounded=0;libavoidRouting=1;orthogonalLoop=1;jettySize=auto;html=1;" target="bookride-hook-service" value="MQ · 接单/状态事件">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="main-edge16" edge="1" parent="1" source="carpool-fulfillment-server" style="endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#ffffff;strokeWidth=1.5;dashed=1;dashPattern=6 4;strokeColor=#b07800;edgeStyle=orthogonalEdgeStyle;rounded=0;libavoidRouting=1;orthogonalLoop=1;jettySize=auto;html=1;" target="carpool-safety-hook-service" value="MQ · 接单/状态事件">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="590" y="925" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="main-edge17" edge="1" parent="1" source="carpool-fulfillment-server" style="endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#ffffff;strokeWidth=1.5;dashed=1;dashPattern=6 4;strokeColor=#b07800;edgeStyle=orthogonalEdgeStyle;rounded=0;libavoidRouting=1;orthogonalLoop=1;jettySize=auto;html=1;" target="carpool-risk-hook-service" value="MQ · 接单/状态事件">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="590" y="695" />
+              <mxPoint x="950" y="695" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="main-edge18" edge="1" parent="1" source="bookride-hook-service" style="endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#ffffff;strokeWidth=1.5;dashed=1;dashPattern=6 4;strokeColor=#b07800;edgeStyle=orthogonalEdgeStyle;rounded=0;libavoidRouting=1;orthogonalLoop=1;jettySize=auto;html=1;" target="carpool-safety-hook-service" value="MQ · 接单/状态事件">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="main-edge19" edge="1" parent="1" source="bookride-hook-service" style="endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#ffffff;strokeWidth=1.5;dashed=1;dashPattern=6 4;strokeColor=#b07800;edgeStyle=orthogonalEdgeStyle;rounded=0;libavoidRouting=1;orthogonalLoop=1;jettySize=auto;html=1;" target="carpool-risk-hook-service" value="MQ · 接单/状态事件">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="main-edge20" edge="1" parent="1" source="bookride-hook-service" style="endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#ffffff;strokeWidth=1.5;dashed=1;dashPattern=6 4;strokeColor=#b07800;edgeStyle=orthogonalEdgeStyle;rounded=0;libavoidRouting=1;orthogonalLoop=1;jettySize=auto;html=1;" target="carpool-fulfillment-server" value="MQ · 接单/状态事件">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="main-edge21" edge="1" parent="1" source="userpermission-thrift-service" style="endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#ffffff;strokeWidth=1.5;dashed=1;dashPattern=6 4;strokeColor=#b07800;edgeStyle=orthogonalEdgeStyle;rounded=0;libavoidRouting=1;orthogonalLoop=1;jettySize=auto;html=1;" target="carpool-risk-hook-service" value="MQ · 封禁取消">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="770" y="325" />
+              <mxPoint x="770" y="625" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="main-edge22" edge="1" parent="1" source="recognition-rs-service" style="endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#ffffff;strokeWidth=1.5;dashed=1;dashPattern=6 4;strokeColor=#b07800;edgeStyle=orthogonalEdgeStyle;rounded=0;libavoidRouting=1;orthogonalLoop=1;jettySize=auto;html=1;" target="bookride-hook-service" value="MQ · 清接单锁">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="403" y="475" />
+              <mxPoint x="403" y="718" />
+              <mxPoint x="950" y="718" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="main-edge23" edge="1" parent="1" source="cmspunish-thrift-service" style="endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#ffffff;strokeWidth=1.5;strokeColor=#35649a;edgeStyle=orthogonalEdgeStyle;rounded=0;libavoidRouting=1;orthogonalLoop=1;jettySize=auto;html=1;" target="ext-punish" value="RPC">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="230" y="129" />
+              <mxPoint x="1550" y="129" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="main-edge24" edge="1" parent="1" source="carpool-risk-hook-service" style="endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#ffffff;strokeWidth=1.5;strokeColor=#35649a;edgeStyle=orthogonalEdgeStyle;rounded=0;libavoidRouting=1;orthogonalLoop=1;jettySize=auto;html=1;" target="ext-identity" value="RPC">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="main-edge25" edge="1" parent="1" source="carpool-risk-hook-service" style="endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#ffffff;strokeWidth=1.5;strokeColor=#35649a;edgeStyle=orthogonalEdgeStyle;rounded=0;libavoidRouting=1;orthogonalLoop=1;jettySize=auto;html=1;" target="ext-order" value="RPC">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="950" y="673" />
+              <mxPoint x="1550" y="673" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="main-edge26" edge="1" parent="1" source="carpool-risk-thrift-service" style="endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#ffffff;strokeWidth=1.5;strokeColor=#35649a;edgeStyle=orthogonalEdgeStyle;rounded=0;libavoidRouting=1;orthogonalLoop=1;jettySize=auto;html=1;" target="ext-order" value="RPC">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="590" y="684" />
+              <mxPoint x="1550" y="684" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="main-edge27" edge="1" parent="1" source="shumei-thrift-service" style="endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#ffffff;strokeWidth=1.5;strokeColor=#35649a;edgeStyle=orthogonalEdgeStyle;rounded=0;libavoidRouting=1;orthogonalLoop=1;jettySize=auto;html=1;" target="ext-vendor" value="HTTP">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="950" y="400" />
+              <mxPoint x="1550" y="400" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="main-edge28" edge="1" parent="1" source="recognition-rs-service" style="endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#ffffff;strokeWidth=1.5;strokeColor=#35649a;edgeStyle=orthogonalEdgeStyle;rounded=0;libavoidRouting=1;orthogonalLoop=1;jettySize=auto;html=1;" target="ext-face" value="HTTP">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="230" y="429" />
+              <mxPoint x="1550" y="429" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="main-edge29" edge="1" parent="1" source="bookride-hook-service" style="endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#ffffff;strokeWidth=1.5;strokeColor=#35649a;edgeStyle=orthogonalEdgeStyle;rounded=0;libavoidRouting=1;orthogonalLoop=1;jettySize=auto;html=1;" target="ext-order" value="RPC">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="main-edge30" edge="1" parent="1" source="carpool-carsafety-rs-service" style="endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#ffffff;strokeWidth=1.5;strokeColor=#35649a;edgeStyle=orthogonalEdgeStyle;rounded=0;libavoidRouting=1;orthogonalLoop=1;jettySize=auto;html=1;" target="ext-safety" value="RPC">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="230" y="879" />
+              <mxPoint x="1550" y="879" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="main-edge31" edge="1" parent="1" source="carpool-safety-hook-service" style="endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#ffffff;strokeWidth=1.5;strokeColor=#35649a;edgeStyle=orthogonalEdgeStyle;rounded=0;libavoidRouting=1;orthogonalLoop=1;jettySize=auto;html=1;" target="ext-safety" value="RPC">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="main-edge32" edge="1" parent="1" source="ai-multi-passenger-blame-service" style="endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#ffffff;strokeWidth=1.5;strokeColor=#35649a;edgeStyle=orthogonalEdgeStyle;rounded=0;libavoidRouting=1;orthogonalLoop=1;jettySize=auto;html=1;" target="ext-order" value="RPC">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="590" y="850" />
+              <mxPoint x="1550" y="850" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="main-edge33" edge="1" parent="1" source="ai-multi-passenger-blame-service" style="endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#ffffff;strokeWidth=1.5;strokeColor=#35649a;edgeStyle=orthogonalEdgeStyle;rounded=0;libavoidRouting=1;orthogonalLoop=1;jettySize=auto;html=1;" target="ext-evidence" value="RPC">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="main-edge34" edge="1" parent="1" source="carpool-fulfillment-server" style="endArrow=block;endFill=1;fontSize=11;labelBackgroundColor=#ffffff;strokeWidth=1.5;strokeColor=#35649a;edgeStyle=orthogonalEdgeStyle;rounded=0;libavoidRouting=1;orthogonalLoop=1;jettySize=auto;html=1;" target="ext-order" value="RPC">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="590" y="729" />
+              <mxPoint x="1550" y="729" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="boundaries" parent="1" style="shape=note;whiteSpace=wrap;html=1;align=left;fontSize=14;spacing=8;fillColor=#fff2cc;strokeColor=#d6b656;" value="&lt;b&gt;阅读边界&lt;/b&gt;&lt;br&gt;① risk-rs-layer 与 risk-thrift 仓内 HTTP 模块并列。② AI 多拼判责与 risk 未发现直接 RPC。&lt;br&gt;③ 人脸取消消息清接单锁；高危/封禁消息按条件取消订单。④ fulfillment 部分接口为空实现，详见项目页。&lt;br&gt;每个项目节点可跳转到上下游分图；接口、topic 和源码证据保存在连线属性中。源码快照关系，生产版本待确认。" vertex="1">
+          <mxGeometry height="100" width="1620" x="40" y="1190" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
